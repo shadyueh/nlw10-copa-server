@@ -9,7 +9,7 @@ Servidor para a app do Bolão da Copa
 
   SQlite - database
 
-# Setup do ambiente de desenvolvimento
+# Configurações da aplicação
 
 Instalando typescript
 
@@ -26,3 +26,12 @@ Instalando o fastify
 Instalando conversor de typescript
 
 ```npm i tsx -D```
+
+# Configurações do banco de dados
+
+Instalando o Prisma
+```npm i prisma -D```
+```npm i @prisma/client```
+
+Inicializando o banco SQlite com o Prisma
+```npx prisma init --datasource-provider sqlite```
