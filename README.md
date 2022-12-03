@@ -43,3 +43,16 @@ e então informe um nome para a migration
 Acessando o banco
 ```npx prisma studio```
 e então acesse a url da IDE pelo navegador
+
+Gerando diagrama ER dinamicamente
+```npm i prisma-erd-generator @mermaid-js/mermaid-cli -D```
+
+crie um generator no arquivo schema.prisma
+```
+generator erd {
+  provider = "prisma-erd-generator"
+}
+```
+e então execute
+
+```npx prisma generate```
