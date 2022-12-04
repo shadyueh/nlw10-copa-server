@@ -9,50 +9,89 @@ Servidor para a app do Bolão da Copa
 
   SQlite - database
 
-# Configurações da aplicação
+# Iniciando o backend
 
+## Configurações da aplicação
+
+```bash
+mkdir -p nlw10-copa/server
+cd nlw10-copa/server
+npm init
+```
 Instalando typescript
 
-```npm i typescript -D```
+```bash
+npm i typescript -D
+```
 
 Inicializando o typescript
 
-```npx tsc --init```
+```bash
+npx tsc --init
+```
 
 Instalando o fastify
 
-```npm i fastify```
+```bash
+npm i fastify
+```
 
 Instalando conversor de typescript
 
-```npm i tsx -D```
+```bash
+npm i tsx -D
+```
 
-# Configurações do banco de dados
+## Configurações do banco de dados
 
 Instalando o Prisma
-```npm i prisma -D```
-```npm i @prisma/client```
+```bash
+npm i prisma -D
+npm i @prisma/client
+```
 
 Inicializando o banco SQlite com o Prisma
-```npx prisma init --datasource-provider sqlite```
+```bash
+npx prisma init --datasource-provider sqlite
+```
 
 Criando migrations
-```npx prisma migrate dev```
+```bash
+npx prisma migrate dev
+```
 e então informe um nome para a migration
 
 Acessando o banco
-```npx prisma studio```
+```bash
+npx prisma studio
+```
 e então acesse a url da IDE pelo navegador
 
 Gerando diagrama ER dinamicamente
-```npm i prisma-erd-generator @mermaid-js/mermaid-cli -D```
+```bash
+npm i prisma-erd-generator @mermaid-js/mermaid-cli -D
+```
 
 crie um generator no arquivo schema.prisma
-```
+```bash
 generator erd {
   provider = "prisma-erd-generator"
 }
 ```
 e então execute
 
-```npx prisma generate```
+```bash
+npx prisma generate
+```
+
+Configurando CORS
+```bash
+npm i @fastify/cors
+```
+e então adicione a configuração no arquivo server.ts
+
+```javascript
+await fastify.register(cors, {
+  origin: true,
+});
+```
